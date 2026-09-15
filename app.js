@@ -75,7 +75,8 @@
     var w = window.innerWidth;
     if (w <= 560) return 1;
     if (w <= 1180) return 2;
-    return 3;
+    if (w <= 1700) return 3;
+    return 4;
   }
 
   var builtCols = 0;

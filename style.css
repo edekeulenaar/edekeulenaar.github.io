@@ -49,7 +49,6 @@
 
   --rail:    clamp(168px, 14vw, 208px);
   --gutter:  clamp(1.4rem, 4.4vw, 4.5rem);
-  --measure: 42rem;   /* the text column; the rail sits outside main */
 
   /* Fluid type. Everything below is expressed against these, so the whole
      page scales with the viewport instead of stepping at breakpoints.
@@ -166,11 +165,10 @@ nav.toc .soon {
 main {
   margin-left: var(--rail);
   padding: 0 var(--gutter) 9rem;
-  max-width: calc(var(--measure) + var(--gutter) * 2);
 }
 
 /* ── Masthead ─────────────────────────────────────────────────────────── */
-.masthead { padding: 3.4rem 0 1rem; max-width: 34rem; }
+.masthead { padding: 3.4rem 0 1rem; }
 
 .masthead h1 {
   font-family: var(--disp);
@@ -214,7 +212,7 @@ section.band { padding: 4.6rem 0 0; scroll-margin-top: 2rem; }
 
 .sec-note {
   font-size: var(--fs-sm); color: var(--muted);
-  margin: -1.2rem 0 2.2rem; max-width: 32rem;
+  margin: -1.2rem 0 2.2rem;
 }
 
 h3.sub {
@@ -319,7 +317,6 @@ h3.sub:first-of-type { margin-top: 0; }
   margin: .22rem 0 .3rem;
   font-size: var(--fs-sm);
   color: var(--ink-2);
-  max-width: 34rem;
 }
 .proj .meta { display: flex; gap: .8rem; align-items: baseline; }
 .proj .src {
@@ -329,15 +326,11 @@ h3.sub:first-of-type { margin-top: 0; }
 .proj .src:hover { color: var(--ink); }
 
 /* ── Scribbles ────────────────────────────────────────────────────────── */
-/* the drawings break out past the text measure — prose stays narrow,
-   pictures get room. Capped so they never reach the window edge. */
 .grid {
   display: flex;
   gap: 1.6rem;
   align-items: flex-start;
   margin-top: .4rem;
-  width: calc(100% + 9rem);
-  max-width: calc(100vw - var(--rail) - var(--gutter) * 2);
 }
 .grid .col {
   flex: 1 1 0;
@@ -346,7 +339,6 @@ h3.sub:first-of-type { margin-top: 0; }
   flex-direction: column;
   gap: 1.6rem;
 }
-@media (max-width: 1180px) { .grid { width: 100%; } }
 
 .tile {
   display: block;
